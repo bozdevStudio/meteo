@@ -8,4 +8,39 @@
 
 <ion-content padding>
 
+	<ion-grid>
+		
+		<ion-row>
+			
+			<ion-col width-100 *ngIf="villes">
+
+		  <div class="blocItemInfos" >
+
+          <div class="partIcone" item-start>
+            <img src="{{villes.icon}}" >
+          </div>
+
+
+          <div class="partText1">
+            <h1>{{villes.station_name}}</h1>
+            <p align="center;">
+             {{villes.ts_condition}}
+            </p>
+          </div>
+
+
+
+          <div class="partText2">
+            <span> {{villes.temp_c}}&deg;</span>
+          </div>
+        </div>
+				
+			
+
+			</ion-col>
+
+		</ion-row>
+
+	</ion-grid>
+
 </ion-content>

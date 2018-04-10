@@ -1,16 +1,210 @@
-// http://ionicframework.com/docs/theming/
 
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+.home {
+	
+	background : #fff;
+	color : color($colors, light);
+	margin-top : 30px;
+
+}
+
+
+
+.toolbar-title {
+	
+	text-align : center ; 
+}
+
+.tabs-md .tabs-button-icon {
+	
+	color : #ccc;
+}
+
+.temp {
+	font-size : 90px;
+	text-align : center ;
+	font-weight : normal;
+	color : color($colors, orange);
+}
+
+.location, .icon_back, .desc, .country {
+	text-align : center ;
+	color : color($colors, secondary);
+}
+
+.country {
+	color : silver;
+}
+
+.icon img {
+	width : 100px;
+}
+
+.location {
+	font-size : 40px;
+}
+
+.desc {
+	font-size : 30px;
+}
+
+.mySpan {
+	color : color($colors, secondary);
+}
+
+.myDiv {
+
+	background : color($colors, primary);
+	color : color($colors, light);
+	border-radius : 3px;
+	padding : 5px;
+
+}
+
+.big_ic {
+
+	font-size : 20px;
+}
+
+ion-icon.big_icon {
+
+	zoom : 4.0;
+	color: color($colors, light);
+
+}
+
+ion-icon.md_icon {
+
+	zoom : 3.0;
+	color: color($colors, light); 
+
+}
+
+ion-icon.md_icon_dark {
+
+	zoom : 2.5;
+	color: color($colors, orange); 
+
+}
+
+ion-icon.sm_icon {
+
+	zoom : 2.0;
+	color: color($colors, light); 
+
+}
+
+.heat_inf {
+	color: color($colors, light);
+	font-size : 30px;
+}
+
+.heat_sup {
+	color: color($colors, orange);
+	font-size : 30px;
+}
+
+
+ion-content.settingsPage
+{
+    margin-top: 25px;
+    ion-card.itemCard-list 
+    {
+      width: 100%;
+      margin: 30px 0 0 0;
+      background-color: white;
+      color: black;
+      -webkit-box-shadow: 0px 4px 13px 5px #a6a8ac;
+      -moz-box-shadow: 0px 4px 13px 5px #a6a8ac;
+      box-shadow: 0px 10px 13px -2px #a6a8ac;
+      border-radius: 0px 0px 3px 3px;
+      &>ion-card-header 
+      {
+        background-color: color($colors, secondary);
+        padding: 10px;
+        margin-bottom: 5px;
+        &>h2 {
+          color: white;
+          font-weight: bold;
+          font-size: 20px;
+          margin: 0;
+          padding: 5px;
+        }
+      }
+      &>div {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 5px;
+        font-weight: bold;
+        font-size: 1em;
+      }
+    }
+
+}
+
+
+ion-footer.settingsPage
+{
+  background-color: lighten( color($colors, secondary), 15%);
+  border-color: lighten( color($colors, secondary), 15%);
+  // background-color : #435d8ccc;
+
+  p.textCopyright 
+  {
+    padding: 10px 0 7px 5px;
+    
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    // text-decoration: underline;
+    // font-style: italic;
+    color: white;
+  }
+
+}
+
+
+div.blocItemInfos 
+{
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 25px;
+  -webkit-box-shadow: 0px 4px 10px 3px #a6a8ac;
+  -moz-box-shadow: 0px 4px 10px 3px #a6a8ac;
+  box-shadow: 0px 4px 10px 3px #a6a8ac;
+  border-radius: 15px; // border: 1px solid color($colors, secondary);
+  &>.partIcone {
+    padding: 15px 10px; // margin-left: 10px;
+    &>ion-icon {
+      font-size: 3em;
+      color: color($colors, dark);
+      padding-left: 5px;
+    }
+  }
+  &>.partText1 {
+    padding: 15px 10px;
+    color: white;
+    flex-grow: 1;
+    text-align: center;
+    &>h1 {
+      color: color($colors, secondary);
+      font-size: 1.5em;
+    }
+    &>p {
+      font-size: 1em;
+      margin: 10px 0 0 0;
+      color: color($colors, secondary);
+    }
+  }
+  &>.partText2 {
+    padding: 15px 10px;
+    &>span {
+      font-size: 2em;
+      color: orange;
+    }
+  }
+}
+

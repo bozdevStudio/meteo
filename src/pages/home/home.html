@@ -4,14 +4,102 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content padding class="home">
+ 
+ <ion-grid *ngIf="weather" >
+   
+   <ion-row>
+     
+     <ion-col width-50 offset-25>
+       
+       <h2 class="location">{{final_city}}</h2>
+       <h3 class="country">Ivory Coast </h3> 
+       <div class="icon_back"><img height="80" width="80" src="{{icon_url}}"> </div> 
+       <h3 class="desc">{{condition_translate}}</h3> 
+       <h1 class="temp">{{temp_c}}&deg;</h1> 
+
+       
+<!--        <span class="mySpan"><strong>Qualité de l'air</strong></span> -->
+<!--        <br>
+       <br> -->
+       <div class="myDiv"> <ion-icon name="bulb" class="big_icon"></ion-icon> {{humidity}}</div>
+       <br>
+       <br>
+       <span class="mySpan"><strong>Direction du vent :</strong></span>  
+       <ion-badge> <ion-icon name="swap" class="sm_icon"></ion-icon> {{direction}}</ion-badge>
+<!--        <br>
+       <br>
+       <span class="mySpan"><strong>Type de vent </strong></span> -->
+       <br>
+       <br>
+       <div class="myDiv"><ion-icon name="crop" class="md_icon"></ion-icon> {{wind_speed}}</div>
+       <br>
+       <br>
+       <span class="mySpan"><strong>Temperature ressentie </strong> &nbsp;
+        <ion-icon name="help-circle" class="md_icon_dark"></ion-icon>
+       </span>
+       <br>
+       <br>
+       <div class="myDiv" *ngIf="weather.heat_index_c"> 
+       <span> Il s'agit de la temperature ressentie par votre corps, elle s'exprime selon l'exposition au soleil </span>
+        <br>
+        <strong>A l'ombre :</strong> <span class="heat_inf"> {{heat_inf}}°</span>
+        <br>
+        <strong>Au soleil :</strong> <span class="heat_sup"> {{heat_sup }}°</span>
+       </div>
+       <br>
+       <br>
+
+
+     </ion-col>
+
+   </ion-row>
+
+   <ion-row style="display: none;">
+     
+     <ion-col>
+       
+       <ion-list>
+         
+        <ion-item>
+          <strong>Temp: </strong> {{weather.temperature_string}}
+        </ion-item>
+
+        <ion-item>
+          <strong>Humidité: </strong> {{weather.relative_humidity}}
+          <br>
+          <span></span>{{humidity}}
+        </ion-item>
+
+        <ion-item>
+          <strong>Direction du vent: </strong> {{weather.wind_dir}}
+          <br>
+          <span></span>{{direction}}
+        </ion-item>
+
+        <ion-item>
+          <strong>Vitesse du vent (Km/h) : </strong> {{weather.wind_mph * 1.6 | number : 0}}
+          <br>
+          <span></span>{{wind_speed}}
+        </ion-item>
+
+        <ion-item>
+          <strong>Heat Index: </strong> {{weather.heat_index_string}}
+          <br>
+          <span></span>{{heat}}
+        </ion-item>
+
+
+       </ion-list>
+
+
+     </ion-col>
+
+   </ion-row>
+
+ </ion-grid>
+
 </ion-content>
+
+
+
