@@ -12,26 +12,26 @@
 		
 		<ion-row>
 			
-			<ion-col width-100 *ngIf="villes">
+			<ion-col width-100 >
 
-		  <div class="blocItemInfos" >
+		  <div class="blocItemInfos" *ngFor="let ville of villes">
 
           <div class="partIcone" item-start>
-            <img src="{{villes.icon}}" >
+            <img src="{{ville.icon}}" >
           </div>
 
 
           <div class="partText1">
-            <h1>{{villes.station_name}}</h1>
+            <h1>{{ville.station_name}}</h1>
             <p align="center;">
-             {{villes.ts_condition}}
+             {{ville.ts_condition}}
             </p>
           </div>
 
 
 
           <div class="partText2">
-            <span> {{villes.temp_c}}&deg;</span>
+            <span> {{ville.temp_c}}&deg;</span>
           </div>
         </div>
 				
