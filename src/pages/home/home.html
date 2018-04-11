@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+     <ion-title><img height="30"  src="assets/imgs/icon.png"> Home</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -59,13 +59,13 @@
 
 
    
- <ion-col >
+ <ion-col width-100>
    
  <ion-row>
    
    <ion-card class="top_card">
   <ion-card-header>
-   <span class="content_header"> {{final_city}} </span>  
+   <span class="content_header_top"> {{final_city}} </span>  
    &nbsp; <small class="content_sm"> <strong>Vent :</strong> {{raw_speed}} km/h</small> 
    &nbsp; <small  class="content_sm"> <ion-icon name="swap" class=""></ion-icon> {{direction}}</small>
   </ion-card-header>
@@ -85,25 +85,54 @@
   </ion-card-header>
 
   <ion-card-content>
+
+    <ion-card>
+
+  <ion-card-header>
+    <span class="content_header">Air</span>  
+    <small class="content_sm right_item"><strong>Humidité : </strong>{{humidity_raw}}</small>
+  </ion-card-header>
+
+  <ion-card-content>
+  {{humidity}}
+  </ion-card-content>
+
+</ion-card>
+
+
+<ion-card>
+
+  <ion-card-header>
+      <span class="content_header">Vent</span>  
+      <small class="content_sm right_item">
+      <strong >Force : </strong>{{wind_intensity}} 
+<!--       <span style="font-size: 10px;">Echelle Beaufort</span> --> 
+    </small>
+  </ion-card-header>
+
+  <ion-card-content>
+  {{wind_speed}}
+  </ion-card-content>
+
+</ion-card>
+
+
+<ion-card>
+
+  <ion-card-header>
+    <span class="content_header">Chaleur</span> 
+    <small class="content_sm right_item">Thermomètre</small>
+  </ion-card-header>
+
+  <ion-card-content>
+&nbsp;<strong>Ombre :  </strong><span class="heat_inf">{{heat_inf}} &deg;</span> 
+
+&nbsp;<strong>Soleil : </strong><span class="heat_sup">{{heat_sup}} &deg;</span> 
+  </ion-card-content>
+
+</ion-card>
   
-    <table >
-      
-      <tr>
-        <td><strong> Air </strong></td>
-        <td>{{humidity}}</td>
-      </tr>
-      
-      <tr>
-        <td><strong> Vent </strong></td>
-        <td>{{wind_speed}}</td>
-      </tr>
-      
-      <tr>
-        <td><strong> Chaleur </strong></td>
-        <td> &nbsp; <strong>Ombre :  </strong><span class="heat_inf">{{heat_inf}} &deg;</span> 
-             &nbsp; <strong>Soleil : </strong><span class="heat_sup">{{heat_sup}} &deg;</span> </td>
-      </tr>
-    </table>
+   
 
   </ion-card-content>
 

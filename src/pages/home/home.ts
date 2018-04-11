@@ -15,7 +15,9 @@ export class HomePage {
   temp_weather : any;
   final_city : string;
   humidity : string;
+  humidity_raw : string;
   direction : string;
+  wind_intensity : string;
   wind_speed : string;
   raw_speed : string;
   heat_inf : string;
@@ -31,6 +33,7 @@ export class HomePage {
 
    temp_w_to_send: string;
    nbr : any;
+
 
 
   constructor(public navCtrl: NavController,
@@ -166,6 +169,7 @@ export class HomePage {
     this.final_city = this.weather.station_name;
     //Humidity 
     this.humidity = this.humidity_format(this.weather.humidity,1);
+    this.humidity_raw = this.weather.humidity;
 
     //Temp
     this.temp_c = this.weather.temp_c;
@@ -273,6 +277,8 @@ export class HomePage {
     this.final_city = this.weather.display_location.city;
     //Humidity 
     this.humidity = humidity_val;
+    this.humidity_raw = this.weather.relative_humidity;
+    this.humidity_raw = this.humidity_raw.substring(0,this.humidity_raw.length - 1);
 
     //Temp
     this.temp_c = this.weather.temp_c;
@@ -376,7 +382,7 @@ humidity_format(ab,boz) {
     }
 
         if ((result > '35') && (result < '65') ) {
-      final_result = "L'air est doux et facile à respirer, idéal pour se promener et profiter des légères brises qui vous caresserons le visage";
+      final_result = "L'air est doux et facile à respirer, idéal pour se balader et sentir les légères brises vous éfleurez le visage";
     }
 
 
@@ -470,18 +476,21 @@ speed_format(wind){
 
   if (to_kmh <= 5 ) {
     result = 'Vent calme, vent paisible';
+    this.wind_intensity = '1';
     return result;
     
   }
 
     if ((to_kmh > 5) && (11 > to_kmh) ) {
     result = 'Vent présent caractérisé par de légères brises; le sens du vent du vent est révelé par la direction de la fumée';
+    this.wind_intensity = '2';
     return result;
   }
 
 
     if ((to_kmh >= 11)  && (19 > to_kmh)) {
     result = 'Vent agréable, on le ressent sur le visage, on le sent passer, on sent les feuilles bouger';
+    this.wind_intensity = '3';
     return result;
   }
 
@@ -489,6 +498,7 @@ speed_format(wind){
 
     if ((to_kmh >= 19)  && (28 > to_kmh)) {
     result = 'Belle brise capable de soulever la poussière, les papiers, un vent légèrement agité et remarquable';
+    this.wind_intensity = '4';
     return result;
   }
 

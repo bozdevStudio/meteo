@@ -34,27 +34,18 @@ background: color($colors, myGrey);
 
 }
 
-table{
+.right_item{
 
-background : color($colors, hardGrey);
-border-collapse : separate;
-border-spacing : 10px 2rem;
-border-radius: 5px;
-}
-
-
-td:nth-child(even) {
-	
-	padding: 5px;
-	border-radius: 3px;
-	--background: #ccc; 
+float: right;
 
 }
 
-tr:nth-child(odd) {
-	
-	border: 2px solid; 
-	border-radius: 5px;
+.content_header_top {
+
+	font-size : 30px;
+	font-weight: bold;
+	color : color($colors, secondary);
+
 
 }
 
@@ -62,7 +53,8 @@ tr:nth-child(odd) {
 
 	font-size : 30px;
 	font-weight: bold;
-	color : color($colors, secondary);
+	color : color($colors, light);
+
 
 }
 
@@ -148,7 +140,7 @@ ion-icon.big_icon {
 ion-icon.md_icon {
 
 	zoom : 3.0;
-	color: color($colors, light); 
+	color: color($colors, orange); 
 
 }
 

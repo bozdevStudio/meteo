@@ -1,0 +1,77 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="settingsPage">
+
+<ion-grid>
+	
+<ion-row>
+	
+	<ion-col width-100>
+
+		<ion-list>
+			
+			<form (ngSubmit)="SaveForm()">
+				
+				<ion-item>
+					
+					<ion-label fixed>
+						City
+					</ion-label>
+
+					<ion-input [(ngModel)]="city" name="city" type="text" ></ion-input>
+
+				</ion-item>
+
+			<ion-item>
+					
+					<ion-label fixed>
+						State
+					</ion-label>
+					<ion-input [(ngModel)]="state" name="state" type="text" disabled></ion-input>
+
+				</ion-item>
+
+				<button ion-button type="submit" block>Save Changes</button>
+
+
+			</form>
+
+		</ion-list>
+		
+
+	</ion-col>
+
+</ion-row>
+
+</ion-grid>
+
+
+<ion-card class="itemCard-list">
+      <ion-card-header>
+        <h2 align="center">About the App</h2>
+      </ion-card-header>
+      <div>
+        &nbsp;Metéo 1.0.0
+      </div>
+      <div>
+        &nbsp;Simple application météo
+      </div> 
+  </ion-card>
+
+
+</ion-content>
+
+
+<ion-footer width-100 class="settingsPage" style="position: absolute;">
+  <p class="textCopyright">
+    bozdevStudio &copy; 2018 Tous droits réservés
+  </p>
+</ion-footer>
