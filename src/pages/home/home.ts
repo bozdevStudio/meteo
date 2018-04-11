@@ -17,6 +17,7 @@ export class HomePage {
   humidity : string;
   direction : string;
   wind_speed : string;
+  raw_speed : string;
   heat_inf : string;
   heat_sup : string;
   temp_c : string;
@@ -174,6 +175,7 @@ export class HomePage {
 
     //Speed
     this.wind_speed = this.speed_format(this.weather.wind_speed);
+    this.raw_speed = this.weather.wind_speed;
 
     //Heat
     this.heat_inf = this.weather.heat_index_c;
@@ -280,6 +282,7 @@ export class HomePage {
 
     //Speed
     this.wind_speed = this.speed_format(wind_mph_val);
+    this.raw_speed = this.weather.wind_speed;
 
     //Heat
     this.heat_inf = heat_val;

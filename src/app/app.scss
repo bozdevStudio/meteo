@@ -20,11 +20,83 @@
 	color : #ccc;
 }
 
-.temp {
-	font-size : 90px;
-	text-align : center ;
+
+.top_card {
+
+	background : #fff;
+
+}
+
+.bottom_card {
+
+background: color($colors, myGrey);
+
+
+}
+
+table{
+
+background : color($colors, hardGrey);
+border-collapse : separate;
+border-spacing : 10px 2rem;
+border-radius: 5px;
+}
+
+
+td:nth-child(even) {
+	
+	padding: 5px;
+	border-radius: 3px;
+	--background: #ccc; 
+
+}
+
+tr:nth-child(odd) {
+	
+	border: 2px solid; 
+	border-radius: 5px;
+
+}
+
+.content_header {
+
+	font-size : 30px;
+	font-weight: bold;
+	color : color($colors, secondary);
+
+}
+
+.content_sm {
+
+color: color($colors, darkGrey);
+margin-left: 3%;
+
+}
+
+.content_right {
+	font-size : 50px;
 	font-weight : normal;
+	float : right ;
 	color : color($colors, orange);
+	margin-top : -5%;
+}
+
+.content_center {
+
+text-align: right;
+font-size: 13px;
+margin-left: 5%;
+color: color($colors, hardGrey);
+font-weight: bold;
+
+}
+
+.content_img {
+
+	float : left;
+	height : 50px;
+	width : 50px;
+
 }
 
 .location, .icon_back, .desc, .country {
@@ -96,12 +168,12 @@ ion-icon.sm_icon {
 
 .heat_inf {
 	color: color($colors, light);
-	font-size : 30px;
+	font-size : 20px;
 }
 
 .heat_sup {
 	color: color($colors, orange);
-	font-size : 30px;
+	font-size : 20px;
 }
 
 
@@ -135,7 +207,6 @@ ion-content.settingsPage
         margin-top: 15px;
         margin-bottom: 15px;
         margin-left: 5px;
-        font-weight: bold;
         font-size: 1em;
       }
     }
@@ -202,7 +273,7 @@ div.blocItemInfos
   &>.partText2 {
     padding: 15px 10px;
     &>span {
-      font-size: 2em;
+      font-size: 2.5em;
       color: orange;
     }
   }

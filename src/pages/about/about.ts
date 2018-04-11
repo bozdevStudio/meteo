@@ -21,11 +21,7 @@ export class AboutPage {
   	this.weatherProvider.getList().subscribe(res => {
 
   		this.temp = res;
-  		// let str_transit : string;
-  		// str_transit = res;
-  		// str_transit = JSON.stringify(str_transit);
-  		//str_transit = str_transit.substring(0,str_transit.lentgh  );
-  		// this.temp = JSON.parse(str_transit);
+  		alert(JSON.stringify(res));
 
   		let taille = Object.keys(this.temp).length;
 

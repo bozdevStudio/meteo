@@ -6,9 +6,9 @@
 
 <ion-content padding class="home">
  
- <ion-grid *ngIf="weather" >
+ <ion-grid  >
    
-   <ion-row>
+<!--    <ion-row>
      
      <ion-col width-50 offset-25>
        
@@ -17,19 +17,19 @@
        <div class="icon_back"><img height="80" width="80" src="{{icon_url}}"> </div> 
        <h3 class="desc">{{condition_translate}}</h3> 
        <h1 class="temp">{{temp_c}}&deg;</h1> 
-
+ -->
        
 <!--        <span class="mySpan"><strong>Qualité de l'air</strong></span> -->
 <!--        <br>
        <br> -->
-       <div class="myDiv"> <ion-icon name="bulb" class="big_icon"></ion-icon> {{humidity}}</div>
+      <!--  <div class="myDiv"> <ion-icon name="bulb" class="big_icon"></ion-icon> {{humidity}}</div>
        <br>
        <br>
        <span class="mySpan"><strong>Direction du vent :</strong></span>  
        <ion-badge> <ion-icon name="swap" class="sm_icon"></ion-icon> {{direction}}</ion-badge>
-<!--        <br>
        <br>
-       <span class="mySpan"><strong>Type de vent </strong></span> -->
+       <br>
+       <span class="mySpan"><strong>Type de vent </strong></span>
        <br>
        <br>
        <div class="myDiv"><ion-icon name="crop" class="md_icon"></ion-icon> {{wind_speed}}</div>
@@ -51,51 +51,70 @@
        <br>
 
 
-     </ion-col>
-
-   </ion-row>
-
-   <ion-row style="display: none;">
      
-     <ion-col>
-       
-       <ion-list>
-         
-        <ion-item>
-          <strong>Temp: </strong> {{weather.temperature_string}}
-        </ion-item>
-
-        <ion-item>
-          <strong>Humidité: </strong> {{weather.relative_humidity}}
-          <br>
-          <span></span>{{humidity}}
-        </ion-item>
-
-        <ion-item>
-          <strong>Direction du vent: </strong> {{weather.wind_dir}}
-          <br>
-          <span></span>{{direction}}
-        </ion-item>
-
-        <ion-item>
-          <strong>Vitesse du vent (Km/h) : </strong> {{weather.wind_mph * 1.6 | number : 0}}
-          <br>
-          <span></span>{{wind_speed}}
-        </ion-item>
-
-        <ion-item>
-          <strong>Heat Index: </strong> {{weather.heat_index_string}}
-          <br>
-          <span></span>{{heat}}
-        </ion-item>
-
-
-       </ion-list>
-
-
-     </ion-col>
-
    </ion-row>
+
+  </ion-col>
+ -->
+
+
+   
+ <ion-col >
+   
+ <ion-row>
+   
+   <ion-card class="top_card">
+  <ion-card-header>
+   <span class="content_header"> {{final_city}} </span>  
+   &nbsp; <small class="content_sm"> <strong>Vent :</strong> {{raw_speed}} km/h</small> 
+   &nbsp; <small  class="content_sm"> <ion-icon name="swap" class=""></ion-icon> {{direction}}</small>
+  </ion-card-header>
+
+  <ion-card-content>
+    <img class="content_img"  src="{{icon_url}}">
+     <span class="content_center">{{condition_translate}}</span>
+    <span class='content_right'>{{temp_c}}&deg;</span>
+  </ion-card-content>
+</ion-card>
+
+
+<ion-card class="bottom_card">
+
+  <ion-card-header class="bt_header">
+    <ion-icon name="bulb" class="md_icon"></ion-icon> 
+  </ion-card-header>
+
+  <ion-card-content>
+  
+    <table >
+      
+      <tr>
+        <td><strong> Air </strong></td>
+        <td>{{humidity}}</td>
+      </tr>
+      
+      <tr>
+        <td><strong> Vent </strong></td>
+        <td>{{wind_speed}}</td>
+      </tr>
+      
+      <tr>
+        <td><strong> Chaleur </strong></td>
+        <td> &nbsp; <strong>Ombre :  </strong><span class="heat_inf">{{heat_inf}} &deg;</span> 
+             &nbsp; <strong>Soleil : </strong><span class="heat_sup">{{heat_sup}} &deg;</span> </td>
+      </tr>
+    </table>
+
+  </ion-card-content>
+
+</ion-card>
+
+
+ </ion-row>
+
+
+ </ion-col>  
+
 
  </ion-grid>
 
